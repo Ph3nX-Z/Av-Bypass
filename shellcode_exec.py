@@ -19,6 +19,7 @@ bytearr_in = shellcode_in
 
 shellcode = bytearray(bytearr_in)
 
+ctypes.windll.kernel32.VirtualAlloc.restype = ctypes.c_void_p
 ptr = ctypes.windll.kernel32.VirtualAlloc(ctypes.c_int(0),
                                           ctypes.c_int(len(shellcode)),
                                           ctypes.c_int(0x3000),
